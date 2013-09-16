@@ -832,6 +832,7 @@ static PHP_GINIT_FUNCTION(phalcon)
 
 static PHP_GSHUTDOWN_FUNCTION(phalcon)
 {
+	return;
 	assert(phalcon_globals->start_memory != NULL);
 
 	pefree(phalcon_globals->start_memory->hash_addresses, 1);
