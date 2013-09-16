@@ -146,6 +146,7 @@ class Build_Generator
 #include "ext/standard/md5.h"
 #include "ext/standard/head.h"
 #include "ext/standard/url.h"
+#include "ext/spl/spl_exceptions.h"
 #include "ext/spl/spl_heap.h"
 #include "ext/date/php_date.h"
 

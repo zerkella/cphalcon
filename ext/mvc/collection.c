@@ -1301,7 +1301,8 @@ PHP_METHOD(Phalcon_Mvc_Collection, save){
 	zval **dependency_injector, **ok, **id;
 	zval *params[2];
 	zval func;
-
+	zval *tmp;
+	
 	dependency_injector = phalcon_fetch_property_this(this_ptr, SL("_dependencyInjector"), PH_NOISY_CC);
 	if (!dependency_injector || Z_TYPE_PP(dependency_injector) != IS_OBJECT) {
 		PHALCON_THROW_EXCEPTION_STRW(phalcon_mvc_model_exception_ce, "A dependency injector container is required to obtain the services related to the ORM");
@@ -1397,7 +1398,6 @@ PHP_METHOD(Phalcon_Mvc_Collection, save){
 	 */
 	ALLOC_INIT_ZVAL(options);
 	array_init_size(options, 1);
-	zval *tmp;
 	ALLOC_INIT_ZVAL(tmp);
 	ZVAL_LONG(tmp, 1);
 	add_assoc_zval_ex(options, SS("w"), tmp);
